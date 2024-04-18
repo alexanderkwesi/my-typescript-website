@@ -407,57 +407,55 @@ $('.zoom_vsg').on('click', function(){
 
 </script>
 <script>
-if ($('.zoom_g').show(true))
-{
 
+    var txt = $('.zoom_g').text();
     
     $('.gwatney').addClass('gwatney');
     $('.zoom_vsg').show();
 
     $('.zoom_g').on('click', function(){
+        if(txt == 'View Larger Images')
+        {
 $('.zoom_vsg').css({"visibility": "visible", "cursor": "not-allowed"});
 $('.gwatney').addClass('new_zoom_g');
 $('.zoom_vsg').show();
 $('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"});
 $('.zoom_g').hide();
+        }
+        else
+        {
+                $('.gwatney').removeClass('new_zoom_g');
+                $('.zoom_vsg').hide(); 
+                $('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"}); 
+                $('.gwatney').addClass('gwatney'); 
+                $('.zoom_g').show(); 
+        }
 });
 
 
 
 $('.zoom_vsg').on('click', function(){
-    $('.gwatney').removeClass('new_zoom_g');
-    $('.zoom_vsg').hide(); 
-    $('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"}); 
-    $('.gwatney').addClass('gwatney'); 
-    $('.zoom_g').show(); 
-});
-}
-else
-{
-
-    
-    $('.gwatney').addClass('new_zoom_g'); 
-    $('.zoom_g').show(); 
-
-    $('.zoom_g').on('click', function(){
-$('.zoom_vsg').css({"visibility": "visible", "cursor": "not-allowed"});
-$('.gwatney').addClass('new_zoom_g'); 
-$('.zoom_vsg').show();
-$('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"});
-$('.zoom_g').hide();
+    if (txt == 'View Smaller Image')
+    {
+        $('.gwatney').removeClass('new_zoom_g');
+        $('.zoom_vsg').hide(); 
+        $('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"}); 
+        $('.gwatney').addClass('gwatney'); 
+        $('.zoom_g').show(); 
+    }
+    else
+    {
+        $('.zoom_vsg').css({"visibility": "visible", "cursor": "not-allowed"});
+        $('.gwatney').addClass('new_zoom_g');
+        $('.zoom_vsg').show();
+        $('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"});
+        $('.zoom_g').hide();
+    }
 });
 
 
 
-$('.zoom_vsg').on('click', function(){
-    $('.gwatney').removeClass('new_zoom_g');
-    $('.zoom_vsg').hide(); 
-    $('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"}); 
-    $('.gwatney').addClass('gwatney'); 
-    $('.zoom_g').show(); 
-});
 
-}
 
 </script>
 
