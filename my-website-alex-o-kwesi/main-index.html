@@ -240,7 +240,7 @@
 </body>
 
 </html>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     function hiddencorner()
     {
        $('.transition').css('visibility', 'visible'); 
@@ -251,8 +251,7 @@
         $('.purple-transition').hide(); 
         $('.black-middle-container').hide();
         $('.black-transition').hide(); 
-        $('.zoom_g').text('n');
-        $('.zoom_g').hide();
+
         
     }
     function hiddencornerpurple()
@@ -266,8 +265,7 @@
         $('.black-middle-container').hide();
         $('.black-transition').hide(); 
         $('.transition').hide();
-        $('.zoom_g').text('n');
-        $('.zoom_g').hide();
+
     }
 $(".one").on('click', function() {
     $('.transition').css('visibility', 'visible');
@@ -294,8 +292,7 @@ function mouses() {
     $('.black-middle-container').css('visibility', 'visible'); 
     $('.purple-middle-container').removeClass('purple_middle_container_over');
     $('.second-div-my-corner-middle-container').removeClass('middle_container_over');
-    $('.zoom_g').text('n');
-    $('.zoom_g').hide();
+
 }
 
 $('.big', '.stuff').one('mousemove',function(){
@@ -322,8 +319,7 @@ $('.transition').hide();
   $('.second-div-my-corner-middle-container').hide();
   $('.purple-middle-container').addClass('purple_middle_container_over');
   hiddencornerpurple().delay(1);
-    $('.zoom_g').text('View Larger Image');
-    $('.zoom_g').show();
+
 });
 
 
@@ -378,8 +374,7 @@ $('.title').mouseover(function(){
     $('.body_aside').css('visibility', 'visible');
     $('.containers').css('visibility', 'visible');
     $('.contain').css('visibility', 'visible');
-    $('.zoom_g').text('n');
-    $('.zoom_g').hide();
+
 });
 
 
@@ -409,11 +404,152 @@ $('.zoom_vsg').on('click', function(){
 
 
 
-</script>
+</script>-->
 <script>
 var txt =  $('.zoom_g').text();
 if (txt == 'View Larger Image')
 {
+
+
+        function hiddencorner()
+    {
+       $('.transition').css('visibility', 'visible'); 
+       $(".transition").removeClass("anim-trans");
+        $('.second-div-my-corner-middle-container').show();
+        $('body').css('background-color', 'white');  
+        $('.purple-middle-container').hide(); 
+        $('.purple-transition').hide(); 
+        $('.black-middle-container').hide();
+        $('.black-transition').hide(); 
+
+        
+    }
+    function hiddencornerpurple()
+    {
+       $('.purple-transition').css('visibility', 'visible'); 
+       $(".purple-transition").removeClass("anim-trans-purple");
+        $('.purple-middle-container').show();
+        $('body').css('background-color', 'white'); 
+        $('.second-div-my-corner-middle-container').hide();
+        $('.black-middle-container').hide();
+        $('.black-middle-container').hide();
+        $('.black-transition').hide(); 
+        $('.transition').hide();
+
+    }
+$(".one").on('click', function() {
+    $('.transition').css('visibility', 'visible');
+  $(".transition").addClass("anim-trans");
+$('.second-div-my-corner-middle-container').css('visibility', 'visible');
+$('.container').hide();
+$('.containers').hide();
+$('.body_used').hide();
+$('.body_').hide();
+$('.body_aside').hide();
+$('.contain').hide();
+$('.img_container').hide();
+$('.purple-transition').css('visibility', 'hidden');
+$('.black-container').hide();
+$('.second-div-my-corner-middle-container').addClass('middle_container_over');
+    hiddencorner().delay(1);
+});
+
+function mouses() {
+
+    $('.transition').css('visibility', 'hidden');
+    $('.purple-transition').css('visibility', 'hidden');
+    $('.body_container').css('visibility', 'visible');
+    $('.black-middle-container').css('visibility', 'visible'); 
+    $('.purple-middle-container').removeClass('purple_middle_container_over');
+    $('.second-div-my-corner-middle-container').removeClass('middle_container_over');
+
+}
+
+$('.big', '.stuff').one('mousemove',function(){
+   mouses.delay(1);
+});
+
+$('.stuff', this, '.hi').one('click', function(){
+mouses.delay(1);
+});
+
+$('.two').click(function() {
+        $('.purple-transition').css('visibility', 'visible');
+  $(".purple-transition").addClass("anim-trans-purple");
+  $('.purple-middle-container').css('visibility', 'visible');
+  $('.img_container').hide();
+  $('.container').hide();
+  $('.containers').hide();
+$('.body_used').hide();
+$('.body_').hide();
+$('.body_aside').hide();
+$('.contain').hide();
+$('.transition').hide();
+  $('.black-container').hide();
+  $('.second-div-my-corner-middle-container').hide();
+  $('.purple-middle-container').addClass('purple_middle_container_over');
+  hiddencornerpurple().delay(1);
+
+});
+
+
+
+
+$('._3').click(function() {
+    $('.black-transition').css('visibility', 'visible');
+  $(".black-transition").addClass("anim-trans-black");
+  $('.transition').css('visibility', 'visible'); 
+       $(".transition").addClass("anim-trans");
+  $('.container').hide();
+  $('.containers').hide();
+$('.body_used').hide();
+$('.body_').hide();
+$('.body_aside').hide();
+$('.contain').hide();
+  $('.purple-transition').css('visibility', 'hidden'); 
+  $('.second-div-my-corner-middle-container').hide();
+  hiddencorner().delay(1);
+
+});
+
+
+// $('.container').mouseout(function(){
+   // $('.container').fadeOut(1000);
+   // $('.img_container').css('margin-top', '-5%');
+
+//});
+
+const cursorSmall = document.querySelector('.small');
+
+const cursorBig = document.querySelector('.big');
+
+
+const positionElement = (e)=> {
+  const mouseY = e.offsetY;
+  const mouseX = e.offsetX;
+   
+  
+  cursorSmall.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+  cursorBig.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+}
+
+window.addEventListener('mousemove', positionElement);
+
+
+$('.title').mouseover(function(){
+    $('.container').fadeOut(1000);
+    $('.img_container').css('margin-top', '-5%');
+    $('.body_').css('visibility', 'visible');
+    $('.body_used').css('visibility', 'visible');
+    $('.body_aside').css('visibility', 'visible');
+    $('.containers').css('visibility', 'visible');
+    $('.contain').css('visibility', 'visible');
+
+});
+
+
+
+    
     $('.gwatney').addClass('gwatney');
     $('.zoom_vsg').show();
 
@@ -438,6 +574,143 @@ $('.zoom_vsg').on('click', function(){
 else
 {
 
+        function hiddencorner()
+    {
+       $('.transition').css('visibility', 'visible'); 
+       $(".transition").removeClass("anim-trans");
+        $('.second-div-my-corner-middle-container').show();
+        $('body').css('background-color', 'white');  
+        $('.purple-middle-container').hide(); 
+        $('.purple-transition').hide(); 
+        $('.black-middle-container').hide();
+        $('.black-transition').hide(); 
+
+        
+    }
+    function hiddencornerpurple()
+    {
+       $('.purple-transition').css('visibility', 'visible'); 
+       $(".purple-transition").removeClass("anim-trans-purple");
+        $('.purple-middle-container').show();
+        $('body').css('background-color', 'white'); 
+        $('.second-div-my-corner-middle-container').hide();
+        $('.black-middle-container').hide();
+        $('.black-middle-container').hide();
+        $('.black-transition').hide(); 
+        $('.transition').hide();
+
+    }
+$(".one").on('click', function() {
+    $('.transition').css('visibility', 'visible');
+  $(".transition").addClass("anim-trans");
+$('.second-div-my-corner-middle-container').css('visibility', 'visible');
+$('.container').hide();
+$('.containers').hide();
+$('.body_used').hide();
+$('.body_').hide();
+$('.body_aside').hide();
+$('.contain').hide();
+$('.img_container').hide();
+$('.purple-transition').css('visibility', 'hidden');
+$('.black-container').hide();
+$('.second-div-my-corner-middle-container').addClass('middle_container_over');
+    hiddencorner().delay(1);
+});
+
+function mouses() {
+
+    $('.transition').css('visibility', 'hidden');
+    $('.purple-transition').css('visibility', 'hidden');
+    $('.body_container').css('visibility', 'visible');
+    $('.black-middle-container').css('visibility', 'visible'); 
+    $('.purple-middle-container').removeClass('purple_middle_container_over');
+    $('.second-div-my-corner-middle-container').removeClass('middle_container_over');
+
+}
+
+$('.big', '.stuff').one('mousemove',function(){
+   mouses.delay(1);
+});
+
+$('.stuff', this, '.hi').one('click', function(){
+mouses.delay(1);
+});
+
+$('.two').click(function() {
+        $('.purple-transition').css('visibility', 'visible');
+  $(".purple-transition").addClass("anim-trans-purple");
+  $('.purple-middle-container').css('visibility', 'visible');
+  $('.img_container').hide();
+  $('.container').hide();
+  $('.containers').hide();
+$('.body_used').hide();
+$('.body_').hide();
+$('.body_aside').hide();
+$('.contain').hide();
+$('.transition').hide();
+  $('.black-container').hide();
+  $('.second-div-my-corner-middle-container').hide();
+  $('.purple-middle-container').addClass('purple_middle_container_over');
+  hiddencornerpurple().delay(1);
+
+});
+
+
+
+
+$('._3').click(function() {
+    $('.black-transition').css('visibility', 'visible');
+  $(".black-transition").addClass("anim-trans-black");
+  $('.transition').css('visibility', 'visible'); 
+       $(".transition").addClass("anim-trans");
+  $('.container').hide();
+  $('.containers').hide();
+$('.body_used').hide();
+$('.body_').hide();
+$('.body_aside').hide();
+$('.contain').hide();
+  $('.purple-transition').css('visibility', 'hidden'); 
+  $('.second-div-my-corner-middle-container').hide();
+  hiddencorner().delay(1);
+
+});
+
+
+// $('.container').mouseout(function(){
+   // $('.container').fadeOut(1000);
+   // $('.img_container').css('margin-top', '-5%');
+
+//});
+
+const cursorSmall = document.querySelector('.small');
+
+const cursorBig = document.querySelector('.big');
+
+
+const positionElement = (e)=> {
+  const mouseY = e.offsetY;
+  const mouseX = e.offsetX;
+   
+  
+  cursorSmall.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+  cursorBig.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+}
+
+window.addEventListener('mousemove', positionElement);
+
+
+$('.title').mouseover(function(){
+    $('.container').fadeOut(1000);
+    $('.img_container').css('margin-top', '-5%');
+    $('.body_').css('visibility', 'visible');
+    $('.body_used').css('visibility', 'visible');
+    $('.body_aside').css('visibility', 'visible');
+    $('.containers').css('visibility', 'visible');
+    $('.contain').css('visibility', 'visible');
+
+});
+
+    
     $('.gwatney').addClass('new_zoom_g'); 
     $('.zoom_g').show(); 
 
