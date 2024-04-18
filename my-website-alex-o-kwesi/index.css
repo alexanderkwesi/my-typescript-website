@@ -1688,19 +1688,3 @@ width:30%;z-index:5; box-shadow: none;}
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-@keyframes shuffle {
-  5%{
-    transform: rotateZ('angle');
-  }
-}
