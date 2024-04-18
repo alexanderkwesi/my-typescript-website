@@ -251,6 +251,8 @@
         $('.purple-transition').hide(); 
         $('.black-middle-container').hide();
         $('.black-transition').hide(); 
+        $('.zoom_g').text('n');
+        $('.zoom_g').hide();
         
     }
     function hiddencornerpurple()
@@ -264,6 +266,8 @@
         $('.black-middle-container').hide();
         $('.black-transition').hide(); 
         $('.transition').hide();
+        $('.zoom_g').text('n');
+        $('.zoom_g').hide();
     }
 $(".one").on('click', function() {
     $('.transition').css('visibility', 'visible');
@@ -290,6 +294,8 @@ function mouses() {
     $('.black-middle-container').css('visibility', 'visible'); 
     $('.purple-middle-container').removeClass('purple_middle_container_over');
     $('.second-div-my-corner-middle-container').removeClass('middle_container_over');
+    $('.zoom_g').text('n');
+    $('.zoom_g').hide();
 }
 
 $('.big', '.stuff').one('mousemove',function(){
@@ -316,6 +322,8 @@ $('.transition').hide();
   $('.second-div-my-corner-middle-container').hide();
   $('.purple-middle-container').addClass('purple_middle_container_over');
   hiddencornerpurple().delay(1);
+    $('.zoom_g').text('View Larger Image');
+    $('.zoom_g').show();
 });
 
 
@@ -370,6 +378,8 @@ $('.title').mouseover(function(){
     $('.body_aside').css('visibility', 'visible');
     $('.containers').css('visibility', 'visible');
     $('.contain').css('visibility', 'visible');
+    $('.zoom_g').text('n');
+    $('.zoom_g').hide();
 });
 
 
