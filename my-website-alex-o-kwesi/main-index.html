@@ -279,7 +279,7 @@ $('.img_container').hide();
 $('.purple-transition').css('visibility', 'hidden');
 $('.black-container').hide();
 $('.second-div-my-corner-middle-container').addClass('middle_container_over');
-hiddencorner().delay(1);
+    hiddencorner().delay(1);
 });
 
 function mouses() {
@@ -355,8 +355,8 @@ const positionElement = (e)=> {
   const mouseX = e.offsetX;
    
   
-  cursorSmall.style.transform = `translate3d(${mouseX}px, ${mouseY}px)`;
-  cursorBig.style.transform = `translate3d(${mouseX}px, ${mouseY}px)`;
+  cursorSmall.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+  cursorBig.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 }
 
 window.addEventListener('mousemove', positionElement);
