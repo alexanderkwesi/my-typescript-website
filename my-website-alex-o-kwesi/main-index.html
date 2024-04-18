@@ -355,8 +355,8 @@ const positionElement = (e)=> {
   const mouseX = e.offsetX;
    
   
-  cursorSmall.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-  cursorBig.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+  cursorSmall.style.transform = `translate3d(${mouseX}px, ${mouseY}px)`;
+  cursorBig.style.transform = `translate3d(${mouseX}px, ${mouseY}px)`;
 }
 
 window.addEventListener('mousemove', positionElement);
