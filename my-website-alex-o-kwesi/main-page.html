@@ -212,7 +212,7 @@
         <a id="corner"></a>
             <div id="stuff" class="stuff">My Stuff</div>
             <div class="gwatney"><p class="logo_g">Logo Designed on Desing.com<p class="kiko_g">by KIKO STUDIOS<p/><p class="zoom_g">View Larger Image</p><p class="zoom_vsg">View Small Image</p></p></div>
-            <div class="cyber"><p>Cyber Securities</p></div>
+            <div class="uvclegal"><p class="uvclegal_g">Web Designed<p class="kiko_g">by KIKO STUDIO's<p/><p class="uvczoom_g">View Larger Image</p><p class="uvczoom_vsg">View Small Image</p></p></div>
             <div class="web"><p>Web Developer</p></div>
             <div class="expert"><p>Spatial Expert</p></div>
             <div class="securities"><p>Cyber Securities</p></div>
@@ -241,16 +241,35 @@
 
 </html>
 <script type="text/javascript">
+
     function hiddencorner()
     {
        $('.transition').css('visibility', 'visible'); 
        $(".transition").removeClass("anim-trans");
         $('.second-div-my-corner-middle-container').show();
-        $('body').css('background-color', 'white'); 
-        $('.purple-container').hide();
-        $('.black-container').hide();
-       
+        $('body').css('background-color', 'white');  
+        $('.purple-middle-container').hide(); 
+        $('.purple-transition').hide(); 
+        $('.black-middle-container').hide();
+        $('.black-transition').hide(); 
+        
     }
+
+    function hiddencornerpurple()
+    {
+       $('.purple-transition').css('visibility', 'visible'); 
+       $(".purple-transition").removeClass("anim-trans-purple");
+        $('.purple-middle-container').show();
+        $('body').css('background-color', 'white'); 
+        $('.second-div-my-corner-middle-container').hide();
+        $('.black-middle-container').hide();
+        $('.black-middle-container').hide();
+        $('.black-transition').hide(); 
+        $('.transition').hide();
+    }
+
+
+
 $(".one").on('click', function() {
     $('.transition').css('visibility', 'visible');
   $(".transition").addClass("anim-trans");
@@ -265,33 +284,47 @@ $('.img_container').hide();
 $('.purple-transition').css('visibility', 'hidden');
 $('.black-container').hide();
 $('.second-div-my-corner-middle-container').addClass('middle_container_over');
-setTimeout(hiddencorner(), 100);
+hiddencorner().delay(1);
 });
 
-$('.big').mousemove(function(){
-    $('.transition').css('visibility', 'hidden'); 
+function mouse() {
+
+    $('.transition').css('visibility', 'hidden');
+    $('.purple-transition').css('visibility', 'hidden');
     $('.body_container').css('visibility', 'visible');
-    $('.black-middle-container').css('visibility', 'visible');
-    $('.purple-middle-container').css('visibility', 'visible');
+    $('.black-middle-container').css('visibility', 'visible'); 
+    $('.purple-middle-container').removeClass('purple_middle_container_over');
     $('.second-div-my-corner-middle-container').removeClass('middle_container_over');
+}
+
+$('.big', '.stuff').one('mousemove',function(){
+   mouse.delay(1);
+});
+
+$('.stuff', this, '.hi').one('click', function(){
+mouse.delay(1);
 });
 
 $('.two').click(function() {
-    $('.purple-transition').css('visibility', 'visible');
+        $('.purple-transition').css('visibility', 'visible');
   $(".purple-transition").addClass("anim-trans-purple");
-  $('.transition').css('visibility', 'visible'); 
-       $(".transition").addClass("anim-trans");
+  $('.purple-middle-container').css('visibility', 'visible');
+  $('.img_container').hide();
   $('.container').hide();
   $('.containers').hide();
 $('.body_used').hide();
 $('.body_').hide();
 $('.body_aside').hide();
 $('.contain').hide();
-  $('.black-transition').css('visibility', 'hidden'); 
+$('.transition').hide();
   $('.black-container').hide();
   $('.second-div-my-corner-middle-container').hide();
-  setTimeout(hiddencorner(), 10);
+  $('.purple-middle-container').addClass('purple_middle_container_over');
+  hiddencornerpurple().delay(1);
 });
+
+
+
 
 $('._3').click(function() {
     $('.black-transition').css('visibility', 'visible');
@@ -306,7 +339,8 @@ $('.body_aside').hide();
 $('.contain').hide();
   $('.purple-transition').css('visibility', 'hidden'); 
   $('.second-div-my-corner-middle-container').hide();
-  setTimeout(hiddencorner(), 10);
+  hiddencorner().delay(1);
+
 });
 
 
@@ -345,10 +379,73 @@ $('.title').mouseover(function(){
 
 
 
+$('.zoom_g').on('click', function(){
+$('.zoom_vsg').css({"visibility": "visible", "cursor": "not-allowed"});
+$('.gwatney').addClass('new_zoom_g');
+$('.zoom_vsg').show();
+$('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"});
+$('.zoom_g').hide();
+});
 
 
 
+$('.zoom_vsg').on('click', function(){
+    $('.gwatney').removeClass('new_zoom_g');
+    $('.zoom_vsg').hide(); 
+    $('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"}); 
+    $('.gwatney').addClass('gwatney'); 
+    $('.zoom_g').show(); 
+});
 
+var txt =  $('.zoom_g').text();
+if (txt == 'View Larger Image')
+{
+    $('.gwatney').addClass('gwatney');
+    $('.zoom_vsg').show();
+
+    $('.zoom_g').on('click', function(){
+$('.zoom_vsg').css({"visibility": "visible", "cursor": "not-allowed"});
+$('.gwatney').addClass('new_zoom_g');
+$('.zoom_vsg').show();
+$('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"});
+$('.zoom_g').hide();
+});
+
+
+
+$('.zoom_vsg').on('click', function(){
+    $('.gwatney').removeClass('new_zoom_g');
+    $('.zoom_vsg').hide(); 
+    $('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"}); 
+    $('.gwatney').addClass('gwatney'); 
+    $('.zoom_g').show(); 
+});
+}
+else
+{
+
+    $('.gwatney').addClass('new_zoom_g'); 
+    $('.zoom_g').show(); 
+
+    $('.zoom_g').on('click', function(){
+$('.zoom_vsg').css({"visibility": "visible", "cursor": "not-allowed"});
+$('.gwatney').addClass('new_zoom_g'); 
+$('.zoom_vsg').show();
+$('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"});
+$('.zoom_g').hide();
+});
+
+
+
+$('.zoom_vsg').on('click', function(){
+    $('.gwatney').removeClass('new_zoom_g');
+    $('.zoom_vsg').hide(); 
+    $('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"}); 
+    $('.gwatney').addClass('gwatney'); 
+    $('.zoom_g').show(); 
+});
+
+}
 
 
 
