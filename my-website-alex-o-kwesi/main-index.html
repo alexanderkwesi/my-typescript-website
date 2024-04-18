@@ -397,6 +397,7 @@ if (txt == 'View Larger Image')
 {
     $('.gwatney').addClass('gwatney');
     $('.zoom_vsg').show();
+    
     $('.zoom_g').on('click', function(){
 $('.zoom_vsg').css({"visibility":"visible","cursor":"not-allowed"});
 $('.gwatney').addClass('new_zoom_g');
@@ -423,7 +424,6 @@ else
 
     $('.zoom_g').on('click', function(){
 $('.zoom_vsg').css({"visibility":"visible","cursor":"not-allowed"});
-$('.gwatney').addClass('new_zoom_g');
 $('.zoom_vsg').show();
 $('.zoom_vsg').css({"visibility":"visible","cursor":"pointer"});
 $('.zoom_g').hide();
@@ -448,3 +448,4 @@ $('.zoom_vsg').on('click', function(){
 
 
 </script>
+
