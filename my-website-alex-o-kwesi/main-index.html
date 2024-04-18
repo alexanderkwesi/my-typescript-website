@@ -282,7 +282,7 @@ $('.second-div-my-corner-middle-container').addClass('middle_container_over');
 hiddencorner().delay(1);
 });
 
-function mouse() {
+function mouses() {
 
     $('.transition').css('visibility', 'hidden');
     $('.purple-transition').css('visibility', 'hidden');
@@ -293,11 +293,11 @@ function mouse() {
 }
 
 $('.big', '.stuff').one('mousemove',function(){
-   mouse.delay(1);
+   mouses.delay(1);
 });
 
 $('.stuff', this, '.hi').one('click', function(){
-mouse.delay(1);
+mouses.delay(1);
 });
 
 $('.two').click(function() {
@@ -436,7 +436,7 @@ $('.zoom_vsg').on('click', function(){
     $('.gwatney').removeClass('new_zoom_g');
     $('.zoom_vsg').hide(); 
     $('.zoom_vsg').css({"visibility": "visible", "cursor": "pointer"}); 
-    //$('.gwatney').addClass('gwatney'); 
+    $('.gwatney').addClass('gwatney'); 
     $('.zoom_g').show(); 
 });
 
