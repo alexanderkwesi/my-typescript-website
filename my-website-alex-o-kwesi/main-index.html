@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="refresh" content="50131" >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <meta name="description" content="Snowpack Application" />
@@ -11,7 +12,8 @@
     <script type="text/javascript" src="/minified/EasePack.min.js"></script>
     <script type="text/javascript" src="/minified/Flip.min.js"></script>
     <script type="text/javascript" src="/minified/gsap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   <!-- <script type="text/javascript" src="./jquery-3.7.1.min.js"></script>-->
+    <script type="text/javascript" src="./jquery-3.7.1.js"></script>
     <title> TypeScript: My, World! </title>
 </head>
 <body>
@@ -25,7 +27,7 @@
                 <path fill-rule="evenodd" d="M8.636 12.5a.5.5 0 0 1-.5.5H1.5A1.5 1.5 0 0 1 0 11.5v-10A1.5 1.5 0 0 1 1.5 0h10A1.5 1.5 0 0 1 13 1.5v6.636a.5.5 0 0 1-1 0V1.5a.5.5 0 0 0-.5-.5h-10a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h6.636a.5.5 0 0 1 .5.5"/>
                 <path fill-rule="evenodd" d="M16 15.5a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1 0-1h3.793L6.146 6.854a.5.5 0 1 1 .708-.708L15 14.293V10.5a.5.5 0 0 1 1 0z"/>
             </svg>
-            
+
         </div>
         
         <div class="name">
@@ -204,14 +206,18 @@
         </div>
     </section>
 </section>
-
+<section id="purple-transition" class="purple-transition"></section>
 <section class="purple-container">
     <section id="purple-middle-container" class="purple-middle-container">
         <a id="corner"></a>
-            <div>My Corner</div>
-            <div>Spatial Expert</div>
-            <div>Cyber Securities</div>
-            <div>Web Developer</div>
+            <div id="stuff" class="stuff">My Stuff</div>
+            <div class="gwatney"><p class="logo_g">Logo Designed on Desing.com<p class="kiko_g">by KIKO STUDIOS<p/><p class="zoom_g">View Larger Image</p><p class="zoom_vsg">View Small Image</p></p></div>
+            <div class="cyber"><p>Cyber Securities</p></div>
+            <div class="web"><p>Web Developer</p></div>
+            <div class="expert"><p>Spatial Expert</p></div>
+            <div class="securities"><p>Cyber Securities</p></div>
+            <div class="developer"><p>Web Developer</p></div>
+            <div class="spe"><p>Spatial Expert</p></div>
     </section>
 </section>
 
@@ -240,10 +246,24 @@
        $('.transition').css('visibility', 'visible'); 
        $(".transition").removeClass("anim-trans");
         $('.second-div-my-corner-middle-container').show();
+        $('body').css('background-color', 'white');  
+        $('.purple-middle-container').hide(); 
+        $('.purple-transition').hide(); 
+        $('.black-middle-container').hide();
+        $('.black-transition').hide(); 
+        
+    }
+    function hiddencornerpurple()
+    {
+       $('.purple-transition').css('visibility', 'visible'); 
+       $(".purple-transition").removeClass("anim-trans-purple");
+        $('.purple-middle-container').show();
         $('body').css('background-color', 'white'); 
-        $('.purple-container').hide();
-        $('.black-container').hide();
-       
+        $('.second-div-my-corner-middle-container').hide();
+        $('.black-middle-container').hide();
+        $('.black-middle-container').hide();
+        $('.black-transition').hide(); 
+        $('.transition').hide();
     }
 $(".one").on('click', function() {
     $('.transition').css('visibility', 'visible');
@@ -259,33 +279,47 @@ $('.img_container').hide();
 $('.purple-transition').css('visibility', 'hidden');
 $('.black-container').hide();
 $('.second-div-my-corner-middle-container').addClass('middle_container_over');
-setTimeout(hiddencorner(), 100);
+hiddencorner().delay(1);
 });
 
-$('.big').mousemove(function(){
-    $('.transition').css('visibility', 'hidden'); 
+function mouse() {
+
+    $('.transition').css('visibility', 'hidden');
+    $('.purple-transition').css('visibility', 'hidden');
     $('.body_container').css('visibility', 'visible');
-    $('.black-middle-container').css('visibility', 'visible');
-    $('.purple-middle-container').css('visibility', 'visible');
+    $('.black-middle-container').css('visibility', 'visible'); 
+    $('.purple-middle-container').removeClass('purple_middle_container_over');
     $('.second-div-my-corner-middle-container').removeClass('middle_container_over');
+}
+
+$('.big', '.stuff').one('mousemove',function(){
+   mouse.delay(1);
+});
+
+$('.stuff', this, '.hi').one('click', function(){
+mouse.delay(1);
 });
 
 $('.two').click(function() {
-    $('.purple-transition').css('visibility', 'visible');
+        $('.purple-transition').css('visibility', 'visible');
   $(".purple-transition").addClass("anim-trans-purple");
-  $('.transition').css('visibility', 'visible'); 
-       $(".transition").addClass("anim-trans");
+  $('.purple-middle-container').css('visibility', 'visible');
+  $('.img_container').hide();
   $('.container').hide();
   $('.containers').hide();
 $('.body_used').hide();
 $('.body_').hide();
 $('.body_aside').hide();
 $('.contain').hide();
-  $('.black-transition').css('visibility', 'hidden'); 
+$('.transition').hide();
   $('.black-container').hide();
   $('.second-div-my-corner-middle-container').hide();
-  setTimeout(hiddencorner(), 10);
+  $('.purple-middle-container').addClass('purple_middle_container_over');
+  hiddencornerpurple().delay(1);
 });
+
+
+
 
 $('._3').click(function() {
     $('.black-transition').css('visibility', 'visible');
@@ -300,7 +334,8 @@ $('.body_aside').hide();
 $('.contain').hide();
   $('.purple-transition').css('visibility', 'hidden'); 
   $('.second-div-my-corner-middle-container').hide();
-  setTimeout(hiddencorner(), 10);
+  hiddencorner().delay(1);
+
 });
 
 
@@ -339,10 +374,72 @@ $('.title').mouseover(function(){
 
 
 
+$('.zoom_g').on('click', function(){
+$('.zoom_vsg').css({"visibility":"visible","cursor":"not-allowed"});
+$('.gwatney').addClass('new_zoom_g');
+$('.zoom_vsg').show();
+$('.zoom_vsg').css({"visibility":"visible","cursor":"pointer"});
+$('.zoom_g').hide();
+});
 
 
 
+$('.zoom_vsg').on('click', function(){
+    $('.gwatney').removeClass('new_zoom_g');
+    $('.zoom_vsg').hide(); 
+    $('.zoom_vsg').css({"visibility":"visible","cursor":"pointer"}); 
+    $('.gwatney').addClass('gwatney'); 
+    $('.zoom_g').show(); 
+});
 
+var txt =  $('.zoom_g').text();
+if (txt == 'View Larger Image')
+{
+    $('.gwatney').addClass('gwatney');
+    $('.zoom_vsg').show();
+    $('.zoom_g').on('click', function(){
+$('.zoom_vsg').css({"visibility":"visible","cursor":"not-allowed"});
+$('.gwatney').addClass('new_zoom_g');
+$('.zoom_vsg').show();
+$('.zoom_vsg').css({"visibility":"visible","cursor":"pointer"});
+$('.zoom_g').hide();
+});
+
+
+
+$('.zoom_vsg').on('click', function(){
+    $('.gwatney').removeClass('new_zoom_g');
+    $('.zoom_vsg').hide(); 
+    $('.zoom_vsg').css({"visibility":"visible","cursor":"pointer"}); 
+    $('.gwatney').addClass('gwatney'); 
+    $('.zoom_g').show(); 
+});
+}
+else
+{
+
+    $('.gwatney').addClass('new_zoom_g'); 
+    $('.zoom_g').show(); 
+
+    $('.zoom_g').on('click', function(){
+$('.zoom_vsg').css({"visibility":"visible","cursor":"not-allowed"});
+$('.gwatney').addClass('new_zoom_g');
+$('.zoom_vsg').show();
+$('.zoom_vsg').css({"visibility":"visible","cursor":"pointer"});
+$('.zoom_g').hide();
+});
+
+
+
+$('.zoom_vsg').on('click', function(){
+    $('.gwatney').removeClass('new_zoom_g');
+    $('.zoom_vsg').hide(); 
+    $('.zoom_vsg').css({"visibility":"visible","cursor":"pointer"}); 
+    $('.gwatney').addClass('gwatney'); 
+    $('.zoom_g').show(); 
+});
+
+}
 
 
 
